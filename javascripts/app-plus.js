@@ -4,9 +4,9 @@ var rover = {
   direction : "N",
   x : 0,
   y : 0,
-  travelLog: [[0,0]]
-  //travelLog: [[this.x,this.y]]
 }
+rover.travelLog = [[rover.x,rover.y]];
+
 //
 
 //para colocar un obstáculo basta con cambiar -> " " por cualquier otra cosa.
