@@ -1,13 +1,13 @@
-// Rover Object
+// Rover Objects
 
 var rover = {
-  direction : "N",
+  direction : "N", //norte
   x : 0,
   y : 0,
 }
-rover.travelLog = [[rover.x,rover.y]];
 
-//
+//declaro fuera esta propiedad para que la posición inicial dependa de X e Y.
+rover.travelLog = [[rover.x,rover.y]];
 
 //para colocar un obstáculo basta con cambiar -> " " por cualquier otra cosa.
 var grid = [
@@ -23,22 +23,17 @@ var grid = [
 [" "," "," "," "," "," "," "," "," "," "]
 ]
 
-
 //cambio de dirección a la izquierda
 function turnLeft(){
   switch (rover.direction){
     case "N":
-      rover.direction = "W";
-      return rover.direction;
+      return rover.direction = "W";
     case "W":
-      rover.direction = "S";
-      return rover.direction;
+      return rover.direction ="S";
     case "S":
-      rover.direction = "E";
-      return rover.direction;
+      return rover.direction = "E";
     case "E":
-      rover.direction = "N";
-      return rover.direction;
+      return rover.direction = "N";
   }
 }
 
@@ -46,17 +41,14 @@ function turnLeft(){
 function turnRight(){  
   switch (rover.direction){
     case "N":
-      rover.direction = "E";
-      return rover.direction;
+      return rover.direction = "E";
     case "W":
-      rover.direction = "N";
-      return rover.direction;
+      return rover.direction = "N";
     case "S":
-      rover.direction = "W";
-      return rover.direction;
+      return rover.direction = "W";
     case "E":
-      rover.direction = "S";
-      return rover.direction;
+      return rover.direction = "S";
+
   }
 }
 
@@ -166,6 +158,7 @@ function move(sequence){
     }
   }
 }
+
 
 //secuencia que encuentra todos los obstáculos y llega al límite del grid:
 move("rffrflfrffrflflfffrflfrflfrfffffrfffflfrffrflfrfbbb");
